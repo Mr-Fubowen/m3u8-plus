@@ -9,14 +9,17 @@
         "m3u8",
         "parser"
     ],
-    "files": [
-        "dist",
-        "src/index.d.ts",
-        "README.md"
-    ],
     "main": "./dist/index.cjs",
     "module": "./dist/index.js",
     "browser": "./dist/index.umd.cjs",
+    "exports": {
+        ".": {
+            "types": "./src/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs",
+            "browser": "./dist/index.umd.cjs"
+        }
+    },
     "scripts": {
         "test": "node ./test/parse.test.js",
         "build": "vite build"
