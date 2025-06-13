@@ -1,7 +1,8 @@
 {
     "name": "meu8-plus",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "private": false,
+    "type": "module",
     "description": "解析和修改 .m3u8 播放列表文件, 将其转化为 JS 对象, 支持环境: Node/ES/浏览器",
     "keywords": [
         "hls",
@@ -24,19 +25,17 @@
             "browser": "./dist/index.umd.cjs"
         }
     },
-    "type": "module",
     "scripts": {
         "test": "node ./test/parse.test.js",
         "build": "vite build"
-    },
-    "dependencies": {},
-    "devDependencies": {
-        "vite": "^5.4.9"
     },
     "author": "Fubowen",
     "license": "MIT",
     "repository": {
         "type": "github",
         "url": "https://github.com/Mr-Fubowen/m3u8-plus.git"
+    },
+    "devDependencies": {
+        "vite": "^5.4.9"
     }
 }
