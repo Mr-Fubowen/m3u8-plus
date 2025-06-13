@@ -1,8 +1,8 @@
 {
     "name": "meu8-plus",
-    "version": "0.0.0",
-    "private": true,
-    "description": "A brief description of your library",
+    "version": "0.0.1",
+    "private": false,
+    "description": "解析和修改 .m3u8 播放列表文件, 将其转化为 JS 对象, 支持环境: Node/ES/浏览器",
     "keywords": [
         "hls",
         "m3u8",
@@ -10,21 +10,22 @@
     ],
     "files": [
         "dist",
-        "./index.d.ts"
+        "./src/index.d.ts"
     ],
-    "main": "./dist/index.js",
-    "module": "./dist/index.mjs",
-    "browser": "./dist/index.umd.js",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "browser": "./dist/index.umd.cjs",
     "exports": {
         ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.js",
-            "browser": "./dist/index.umd.js"
+            "types": "./src/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs",
+            "browser": "./dist/index.umd.cjs"
         }
     },
     "type": "module",
     "scripts": {
+        "test": "node ./test/parse.test.js",
         "build": "vite build"
     },
     "dependencies": {},
@@ -35,10 +36,10 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/yourusername/meu8-plus.git"
+        "url": "https://github.com/Mr-Fubowen/m3u8-plus.git"
     },
     "bugs": {
-        "url": "https://github.com/yourusername/meu8-plus/issues"
+        "url": "https://github.com/Mr-Fubowen/m3u8-plus/issues"
     },
-    "homepage": "https://github.com/yourusername/meu8-plus#readme"
+    "homepage": "https://github.com/Mr-Fubowen/m3u8-plus#readme"
 }

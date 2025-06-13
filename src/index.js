@@ -1,5 +1,5 @@
 export function replace(msg, ...args) {
-    return msg.replace(/\{([0-9]+)\}/g, (match, idx) => args.at(parseInt(idx)) || match)
+    return msg.replace(/\{([0-9]+)\}/g, (match, idx) => args.at(parseInt(idx)) ?? '')
 }
 export const transforms = [
     {
@@ -94,7 +94,7 @@ export const transforms = [
             const [duration, title] = value.split(',')
             const url = iterator.next().value
             const part = {
-                duration,
+                duration: parseInt(duration),
                 title,
                 url,
                 key: result.usedKey
@@ -147,10 +147,6 @@ export function parse(text) {
     const lines = text.split('\n')
     const iterator = lines[Symbol.iterator]()
     const result = {
-        transforms: [],
-        toText() {
-            return this.transforms.map(fn => fn()).join('\n')
-        },
         start: null,
         version: null,
         targetDuration: null,
@@ -161,7 +157,11 @@ export function parse(text) {
         segments: [],
         end: null,
         totalDuration: 0,
-        unknowns: []
+        unknowns: [],
+        toText() {
+            return this.transforms.map(fn => fn()).join('\n')
+        },
+        transforms: []
     }
     for (let item = iterator.next(); !item.done; item = iterator.next()) {
         const value = item.value

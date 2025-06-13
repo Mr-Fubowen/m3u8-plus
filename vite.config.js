@@ -14,7 +14,7 @@ export default defineConfig({
             entry: './src/index.js',
             name: 'index',
             fileName: 'index',
-            formats: ['es', 'cjs', 'umd']
+            formats: ['umd', 'cjs', 'es']
         }
     }
 })
