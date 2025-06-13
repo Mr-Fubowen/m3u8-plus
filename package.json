@@ -1,6 +1,6 @@
 {
     "name": "meu8-plus",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "private": false,
     "description": "解析和修改 .m3u8 播放列表文件, 将其转化为 JS 对象, 支持环境: Node/ES/浏览器",
     "keywords": [
@@ -10,7 +10,8 @@
     ],
     "files": [
         "dist",
-        "./src/index.d.ts"
+        "./src/index.d.ts",
+        "README.md"
     ],
     "main": "./dist/index.cjs",
     "module": "./dist/index.js",

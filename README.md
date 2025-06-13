@@ -21,7 +21,7 @@ npm install m3u8-plus
 ### 浏览器
 
 ```html
-<script src="path/to/m3u8-plus.js"></script>
+<script src="path/to/index.umd.cjs"></script>
 ```
 
 ## 示例
